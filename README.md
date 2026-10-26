@@ -190,6 +190,7 @@ Verification activities:
 Successful access to online resources confirmed that the network configuration was functioning correctly.
 
 ### Evidence
+![Internet Connectivity Verification](images/FULL-INTERNET-CONNECTIVITY.png)
 
 images/FULL-INTERNET-CONNECTIVITY.png
 
