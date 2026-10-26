@@ -1,11 +1,65 @@
-# Week 1 - Project Module 1
-## Lab Setup: VirtualBox and Kali Linux Installation
+# Week 1 Project Module 1
+# VirtualBox and Kali Linux Lab Setup
+
+## Overview
+
+This project documents the creation of a cybersecurity laboratory environment using Oracle VirtualBox and Kali Linux. The objective was to install Kali Linux from an ISO image, configure networking, verify internet connectivity, and create a clean snapshot for future cybersecurity exercises.
 
 ---
 
-# Objective
+# Project Objectives
 
-The objective of this project was to create a virtual cybersecurity lab environment by installing Kali Linux inside Oracle VirtualBox and configuring networking to provide internet connectivity for future cybersecurity exercises.
+- Install Oracle VirtualBox
+- Create a NAT Network for virtual machine communication
+- Install Kali Linux using an ISO disk image
+- Configure network settings
+- Verify internet connectivity
+- Create a clean system snapshot
+- Prepare a secure cybersecurity lab environment
+
+---
+
+# Host System Specifications
+
+The lab environment was created on the following host machine:
+
+| Component | Specification |
+|------------|-------------|
+| Device Name | Nkaka |
+| Operating System | Windows 11 Pro |
+| Version | 26H2 |
+| OS Build | 26300.9711 |
+| Processor | Intel® Core™ i7-8550U CPU @ 1.80 GHz |
+| Installed RAM | 16 GB (15.9 GB usable) |
+| Graphics | Intel UHD Graphics 620 |
+| Storage Capacity | 238 GB |
+| System Type | 64-bit Operating System, x64-based Processor |
+
+## Evidence
+
+![Host System Specifications](images/HOST-SYSTEM-SPECS.png)
+
+---
+
+# Virtual Machine Specifications
+
+The virtual machine was configured as follows:
+
+| Component | Configuration |
+|------------|-------------|
+| Hypervisor | Oracle VirtualBox |
+| Guest Operating System | Kali Linux |
+| Installation Method | ISO Disk Image Installation |
+| Virtual RAM | 2048 MB |
+| Virtual Storage | Virtual Hard Disk |
+| Network Adapter | NAT Network |
+| Network Address Range | 10.0.0.0/24 |
+| DNS Server | 8.8.8.8 |
+| Snapshot Status | Fresh Installation Snapshot Created |
+
+## Evidence
+
+![Virtual Machine Configuration](images/VM-SPECS.png)
 
 ---
 
@@ -13,21 +67,10 @@ The objective of this project was to create a virtual cybersecurity lab environm
 
 - Oracle VirtualBox
 - Kali Linux ISO Image
-- NAT Network Configuration
+- NAT Networking
+- DHCP
+- DNS Configuration
 - Virtual Machine Snapshots
-
----
-
-# Lab Environment
-
-| Component | Configuration |
-|------------|---------------|
-| Hypervisor | Oracle VirtualBox |
-| Operating System | Kali Linux |
-| Network Type | NAT Network |
-| IPv4 Network | 10.0.0.0/24 |
-| DNS Server | 8.8.8.8 |
-| Snapshot | Fresh Installation Snapshot |
 
 ---
 
@@ -35,183 +78,214 @@ The objective of this project was to create a virtual cybersecurity lab environm
 
 ## Step 1: Install Oracle VirtualBox
 
-Oracle VirtualBox was installed on the host machine to create and manage virtual machines.
+Oracle VirtualBox was installed on the host system to provide a virtualized environment for running Kali Linux.
 
 Purpose:
 
-- Isolate the cybersecurity lab environment
 - Run Kali Linux safely
-- Create snapshots for recovery
+- Isolate testing activities
+- Create restore points through snapshots
+- Build a cybersecurity learning environment
 
 ---
 
 ## Step 2: Create NAT Network
 
-A NAT Network was created before installing the operating system.
+Before creating the virtual machine, a NAT Network was configured in VirtualBox.
 
-Configuration:
+Network Configuration:
 
 ```text
 Network Name: NatNetwork
-Network Address: 10.0.0.0/24
+IPv4 Network: 10.0.0.0/24
 DHCP: Enabled
 ```
 
-This configuration allows internet connectivity while maintaining a private network for virtual machines.
+This network configuration provides internet access to the virtual machine while keeping the environment isolated from the host network.
 
 ### Evidence
 
-Insert screenshot of NAT Network configuration below:
-
-![NAT Network Configuration](NAT-NETWORK.png)
+![NAT Network Configuration](images/NAT-NETWORK.png)
 
 ---
 
 ## Step 3: Create Kali Linux Virtual Machine
 
-A new virtual machine was created with the following specifications:
+A new virtual machine was created in VirtualBox.
+
+Configuration:
 
 ```text
 Operating System: Kali Linux (64-bit)
-Memory: 2048 MB RAM
-Storage: Virtual Hard Disk
-Network Adapter: NAT Network
+Memory Allocation: 2048 MB
+Storage Type: Virtual Hard Disk
+Network Mode: NAT Network
 ```
 
-The Kali Linux ISO image was mounted as the bootable installation media.
+The Kali Linux ISO image was mounted as installation media.
 
 ---
 
-## Step 4: Install Kali Linux from ISO
+## Step 4: Install Kali Linux from ISO Image
 
-Unlike the sample environment that used a prebuilt virtual appliance, Kali Linux was installed manually using the official ISO disk image.
+Unlike importing a prebuilt virtual appliance, Kali Linux was installed manually using an ISO disk image.
 
-Installation tasks completed:
+Installation Process:
 
-- Boot Kali Linux installer
-- Configure system language
+- Boot from Kali Linux ISO
+- Select installation language
 - Configure keyboard layout
 - Configure hostname
 - Create user account
-- Configure password
-- Partition virtual disk
+- Create user password
+- Configure disk partitioning
 - Install operating system
 - Install GRUB bootloader
 - Reboot into Kali Linux
 
-Installation was completed successfully and the system booted into the Kali Linux desktop environment.
+The installation completed successfully and the Kali desktop environment loaded correctly.
 
 ---
 
 ## Step 5: Configure Network Settings
 
-After installation, networking was configured to ensure internet access.
+After installation, network settings were configured to enable internet connectivity.
 
 Configuration:
 
 ```text
-IPv4 Address: 10.0.0.2
+IP Address: 10.0.0.2
 Gateway: 10.0.0.1
-DNS Server: 8.8.8.8
 Subnet Prefix: /24
+DNS Server: 8.8.8.8
 ```
+
+This configuration allows the virtual machine to communicate through the VirtualBox NAT Network and access internet resources.
 
 ### Evidence
 
-Insert screenshot showing network settings:
-
-![Network Configuration](CONFIG-ADDRESSES-AND-DNS-SERVER.png)
+![Network Configuration](images/CONFIG-ADDRESSES-AND-DNS-SERVER.png)
 
 ---
 
 ## Step 6: Verify Internet Connectivity
 
-Internet connectivity was tested after configuration.
+Internet connectivity was verified after network configuration.
 
-Verification tasks:
+Verification activities included:
 
-- Access web browser
-- Reach external websites
-- Verify DNS resolution
-- Confirm network communication
+- Testing network communication
+- Loading external websites
+- Confirming DNS functionality
+- Confirming successful internet access
 
-Successful web access confirmed that the Kali Linux virtual machine had internet connectivity.
+The system successfully connected to external web resources.
 
 ### Evidence
 
-Insert screenshot showing successful internet connection:
-
-![Internet Connectivity](FULL-INTERNET-CONNECTIVITY.png)
+![Internet Connectivity Verification](images/FULL-INTERNET-CONNECTIVITY.png)
 
 ---
 
-## Step 7: Create System Snapshot
+## Step 7: Create Fresh System Snapshot
 
-After completing installation and network verification, a VirtualBox snapshot was created.
+After successfully completing installation and network configuration, a virtual machine snapshot was created.
 
-Snapshot Name:
+Snapshot Details:
 
 ```text
-my fresh snapshot
+Snapshot Name: my fresh snapshot
 ```
 
 Purpose:
 
-- Quickly restore the system if issues occur
-- Maintain a clean baseline installation
-- Preserve the working lab setup
+- Preserve a clean working installation
+- Create a recovery point
+- Allow restoration if system changes cause issues
+- Maintain a stable baseline environment
+
+### Evidence
+
+![Fresh Snapshot](images/FRESH-SNAPSHOT.png)
 
 ---
 
 # Challenges Encountered
 
-### Network Configuration
+## Network Configuration
 
-Configuring the virtual machine networking required understanding how NAT Networks operate within VirtualBox and ensuring correct address assignment.
+Understanding VirtualBox NAT networking required configuring virtual networking correctly so the virtual machine could communicate with external resources.
 
-### Initial Connectivity Testing
+## Connectivity Verification
 
-Internet connectivity had to be verified after installation to confirm that DNS resolution and network routing were functioning correctly.
+Testing and verifying internet connectivity helped ensure proper DNS resolution and network routing.
 
----
+## Virtual Machine Setup
 
-# Skills Gained
-
-Through this project I learned how to:
-
-- Install Oracle VirtualBox
-- Create and configure NAT Networks
-- Install Kali Linux from an ISO image
-- Configure virtual machine networking
-- Configure DNS settings
-- Verify internet connectivity
-- Create and manage VirtualBox snapshots
-- Build a secure virtual lab environment
+Allocating resources appropriately ensured that Kali Linux operated efficiently without affecting the host operating system.
 
 ---
 
-# Key Takeaways
+# Skills Acquired
 
-This project provided practical experience in:
+During this project I gained experience in:
 
-- Virtualisation technologies
-- Operating system installation
-- Network configuration
-- Snapshot management
-- Cybersecurity lab preparation
+- Virtualization Technologies
+- Oracle VirtualBox Administration
+- Operating System Installation
+- Kali Linux Installation
+- Virtual Networking
+- NAT Configuration
+- DNS Configuration
+- Internet Connectivity Verification
+- Snapshot Management
+- Cybersecurity Lab Preparation
 
-The completed environment provides a stable foundation for future cybersecurity exercises, penetration testing activities, and network security projects.
+---
+
+# Key Learning Outcomes
+
+This project provided practical hands-on experience with:
+
+- Building a virtual cybersecurity environment
+- Installing and configuring Linux operating systems
+- Managing virtual machine networking
+- Creating recovery snapshots
+- Validating network connectivity
+- Preparing infrastructure for future cybersecurity activities
+
+The completed virtual lab provides a stable foundation for future penetration testing, networking, and cybersecurity projects.
 
 ---
 
 # Project Status
 
-✅ VirtualBox Verified
+✅ Oracle VirtualBox Installed
+
+✅ NAT Network Configured
+
+✅ Kali Linux Installed from ISO Image
+
+✅ Network Settings Configured
+
+✅ Internet Connectivity Verified
 
 ✅ DNS Configuration Completed
 
-✅ Initial Snapshot Created
+✅ Fresh Snapshot Created
 
-✅ Cybersecurity Lab Ready
+✅ Cybersecurity Lab Environment Ready
 
 ---
+
+# Repository Structure
+
+```text
+NETWORKS-W1-LAB-PROJECT/
+│
+├── README.md
+│
+└── images/
+    ├── HOST-SYSTEM-SPECS.png
+    ├── VM-SPECS.png
+    ├── 
