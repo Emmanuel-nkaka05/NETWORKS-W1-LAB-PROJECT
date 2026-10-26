@@ -112,7 +112,7 @@ DHCP: Enabled
 This network allows virtual machines to access the internet while remaining isolated from the physical network.
 
 ### Evidence
-![NAT Network Configuration](images/NAT%20NETWORK.png)
+![NAT Network Configuration](images/NAT-NETWORK.png)
 ---
 
 ## Step 3: Create Kali Linux Virtual Machine
@@ -130,7 +130,7 @@ Network Adapter: NAT Network
 
 The official Kali Linux ISO image was attached as the installation media.
 
-![VM Network Adapter](images/VM%20MACHINE%20NETWORK%20ADAPTER.png)
+![VM Network Adapter](images/VM-MACHINE-NETWORK-ADAPTER.png)
 ---
 
 ## Step 4: Install Kali Linux from ISO Image
@@ -170,7 +170,7 @@ DNS Server: 8.8.8.8
 This setup provides internet access and DNS resolution.
 
 ### Evidence
-![Network Configuration](images/CONFIG%20ADDRESSES%20AND%20DNS%20SERVER.png)
+![Network Configuration](images/CONFIG-ADDRESSES-AND-DNS-SERVER.png)
 
 
 ---
@@ -213,7 +213,7 @@ Benefits:
 - Stable baseline environment
 
 ### Evidence
-![Fresh Snapshot](images/FRESH%20SNAPSHOT.png)
+![Fresh Snapshot](images/FRESH-SNAPSHOT.png)
 
 
 ---
