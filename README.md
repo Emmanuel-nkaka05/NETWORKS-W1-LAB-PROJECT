@@ -63,7 +63,7 @@ This configuration allows internet connectivity while maintaining a private netw
 
 Insert screenshot of NAT Network configuration below:
 
-![NAT Network Configuration](images/NAT-NETWORK.png)
+![NAT Network Configuration](NAT-NETWORK.png)
 
 ---
 
@@ -120,7 +120,7 @@ Subnet Prefix: /24
 
 Insert screenshot showing network settings:
 
-![Network Configuration](images/CONFIG-ADDRESSES-AND-DNS-SERVER.png)
+![Network Configuration](CONFIG-ADDRESSES-AND-DNS-SERVER.png)
 
 ---
 
@@ -141,7 +141,7 @@ Successful web access confirmed that the Kali Linux virtual machine had internet
 
 Insert screenshot showing successful internet connection:
 
-![Internet Connectivity](images/FULL-INTERNET-CONNECTIVITY.png)
+![Internet Connectivity](FULL-INTERNET-CONNECTIVITY.png)
 
 ---
 
